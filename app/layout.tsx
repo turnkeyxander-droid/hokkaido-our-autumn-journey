@@ -3,8 +3,8 @@ import "./globals.css";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
-  title: "北海道 Day 1–2｜私人旅行手册",
-  description: "北海道 15 天旅程的 Day 1–2 手机优先旅行手册。",
+  title: "北海道秋季自驾｜私人旅行手册",
+  description: "北海道秋季自驾 14 天 13 夜的手机优先私人旅行手册。",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
