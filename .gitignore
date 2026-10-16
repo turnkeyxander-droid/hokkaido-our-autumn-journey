@@ -8,3 +8,4 @@ out/
 /components/connector-error.tsx
 /lib/*
 !/lib/itinerary.ts
+!/lib/timetable.ts
