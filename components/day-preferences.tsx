@@ -19,7 +19,7 @@ export function DayPreferences() {
     setTheme(savedTheme);
     setLanguage(savedLanguage);
     document.documentElement.dataset.theme = savedTheme;
-    document.documentElement.dataset.dayLanguage = savedLanguage;
+    document.documentElement.dataset.language = savedLanguage;
   }, []);
 
   const toggleTheme = () => {
@@ -33,15 +33,15 @@ export function DayPreferences() {
     const next = language === "zh" ? "en" : "zh";
     setLanguage(next);
     localStorage.setItem(LANGUAGE_KEY, next);
-    document.documentElement.dataset.dayLanguage = next;
+    document.documentElement.dataset.language = next;
   };
 
-  return <div className="day-preferences flex items-center gap-2" aria-label="Display preferences">
-    <button type="button" onClick={toggleTheme} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 text-xs font-bold text-white transition hover:bg-black/35" aria-label={theme === "light" ? "切换深色模式" : "切换浅色模式"}>
+  return <div className="day-preferences flex items-center gap-1.5" aria-label="Display preferences">
+    <button type="button" onClick={toggleTheme} className="preference-button inline-flex min-h-10 items-center gap-2 rounded-full border border-[#18352f]/12 bg-white/65 px-3 text-xs font-bold text-[#48635d] transition hover:bg-white" aria-label={theme === "light" ? "切换深色模式" : "切换浅色模式"}>
       {theme === "light" ? <Moon size={15} /> : <Sun size={15} />}
       <span className="lang-zh">{theme === "light" ? "深色" : "浅色"}</span><span className="lang-en">{theme === "light" ? "Dark" : "Light"}</span>
     </button>
-    <button type="button" onClick={toggleLanguage} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 text-xs font-bold text-white transition hover:bg-black/35" aria-label={language === "zh" ? "Switch to English" : "切换到中文"}>
+    <button type="button" onClick={toggleLanguage} className="preference-button inline-flex min-h-10 items-center gap-2 rounded-full border border-[#18352f]/12 bg-white/65 px-3 text-xs font-bold text-[#48635d] transition hover:bg-white" aria-label={language === "zh" ? "Switch to English" : "切换到中文"}>
       <Languages size={15} /> {language === "zh" ? "EN" : "中文"}
     </button>
   </div>;
