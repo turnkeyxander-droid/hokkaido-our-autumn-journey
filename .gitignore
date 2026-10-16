@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+.env*
+/components/ui/
+/components/connector-error.tsx
+/lib/*
+!/lib/itinerary.ts
