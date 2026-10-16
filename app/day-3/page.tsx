@@ -1,8 +1,10 @@
 import { DayHero } from "@/components/day-hero";
 import { MapCard } from "@/components/map-card";
 import { Timeline } from "@/components/timeline";
+import { StayCard } from "@/components/stay-card";
+import { Bilingual } from "@/components/bilingual";
 import { day3Route, day3SupplyList, day3Timeline } from "@/lib/itinerary";
-import { AlertTriangle, BedDouble, CheckCircle2, CircleSlash2, Droplets, Footprints, House, MapPin, MoonStar, ShoppingBasket, Sparkles, Store, Trees, Utensils, Wine } from "lucide-react";
+import { AlertTriangle, CheckCircle2, CircleSlash2, Droplets, Footprints, House, MapPin, MoonStar, ShoppingBasket, Sparkles, Store, Trees, Utensils, Wine } from "lucide-react";
 
 const bookingRows = [
   ["Nakayama Pass", "免费／不用"],
@@ -15,31 +17,35 @@ const bookingRows = [
 ];
 
 export default function Day3Page() {
-  return <main>
+  return <main className="day-page">
     <DayHero
       day="03"
       date="THU · 22 OCT 2026"
       title="Jozankei → Nakayama Pass → Kyogoku → Makkari → Niseko"
+      titleEn="Jozankei → Nakayama Pass → Kyogoku → Makkari → Niseko"
       kicker="羊蹄山、北海道农村、涌水森林、小镇与 Road Trip。白天内容完整，晚上只做有意义的选择。"
+      kickerEn="Mt. Yotei, rural Hokkaido, a spring-water forest, small towns and a road trip. A full day with a meaningful choice at night."
       location="JOZANKEI → NISEKO"
+      locationEn="JOZANKEI → NISEKO"
       previousHref="/day-2"
       nextHref="/itinerary"
       nextLabel="行程列表"
+      nextLabelEn="ITINERARY"
     />
 
     <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
       <section className="grid gap-5 md:grid-cols-[1.35fr_.65fr]">
-        <div className="rounded-[28px] bg-white p-6 shadow-sm ring-1 ring-[#18352f]/8 sm:p-8">
-          <div className="flex items-center justify-between gap-4"><div><p className="eyebrow">DAY PLAN</p><h2 className="mt-2 font-serif text-3xl">Day 3 时间表</h2></div><span className="rounded-full bg-[#e2eadf] px-3 py-2 text-[10px] font-bold text-[#315d4f]">ROAD TRIP</span></div>
+        <div className="order-2 rounded-[28px] bg-white p-6 shadow-sm ring-1 ring-[#18352f]/8 sm:p-8 md:order-1">
+          <div className="flex items-center justify-between gap-4"><div><p className="eyebrow">DAY PLAN</p><h2 className="mt-2 font-serif text-3xl"><Bilingual zh="Day 3 时间表" en="DAY 3 TIMELINE" /></h2><p className="mt-2 text-xs font-semibold text-[#78908a]"><Bilingual zh="每一个时间段都可以点开。" en="Tap any time block for full details." /></p></div><span className="rounded-full bg-[#e2eadf] px-3 py-2 text-[10px] font-bold text-[#315d4f]">ROAD TRIP</span></div>
           <Timeline items={day3Timeline} />
         </div>
-        <div className="space-y-5">
-          <div className="rounded-[28px] bg-[#d97b52] p-6 text-white"><BedDouble size={22} className="text-[#ffdc8a]" /><p className="mt-6 text-[10px] font-bold tracking-[0.22em] text-white/55">TODAY&apos;S STAY</p><h3 className="mt-2 font-serif text-2xl">Taki – Annupuri Riverside Chalet</h3><p className="mt-2 text-sm text-white/75">495-3 Soga, Niseko</p><div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/20 pt-5 text-xs"><div><p className="text-white/50">Check-in</p><p className="mt-1 font-bold">15:00–18:00</p></div><div><p className="text-white/50">Check-out</p><p className="mt-1 font-bold">24 Oct · 10:00</p></div></div><p className="mt-5 rounded-2xl bg-white/10 p-4 text-xs leading-5 text-white/75">硬限制是 18:00 前完成 check-in；目标 16:15–16:45 抵达，放好行李后白天任务就结束。</p></div>
+        <div className="order-1 space-y-5 md:order-2">
+          <StayCard name="Taki – Annupuri Riverside Chalet" locationZh="495-3 Soga, Niseko 二世谷" locationEn="495-3 Soga, Niseko" checkIn="15:00–18:00" checkOut="24 Oct · 10:00" alertZh="硬限制是 18:00 前完成入住；目标 16:15–16:45 抵达。" alertEn="Check-in must be completed before 18:00; aim to arrive at 16:15–16:45." />
           <div className="rounded-[28px] bg-[#18352f] p-6 text-white"><Sparkles size={21} className="text-[#f6c85f]" /><h3 className="mt-5 font-serif text-xl">今天不是大量景点日</h3><p className="mt-3 text-sm leading-6 text-white/65">定位是「羊蹄山＋北海道农村＋涌水森林＋小镇＋Road Trip」。行程约 70–80% 满，留一点时间看田、农舍和羊蹄山角度。</p></div>
         </div>
       </section>
 
-      <section className="mt-16 grid gap-5 lg:grid-cols-2">
+      <div className="day-details-zh"><section className="mt-16 grid gap-5 lg:grid-cols-2">
         <article className="rounded-[28px] bg-white p-6 ring-1 ring-[#18352f]/8 sm:p-8">
           <div className="flex items-start justify-between gap-4"><div><p className="eyebrow">10:35 · STOP 01</p><h2 className="mt-3 font-serif text-3xl">Nakayama Pass<br />中山峠</h2></div><span className="text-lg text-[#d8a932]">★★★★½</span></div>
           <p className="mt-5 text-sm font-bold text-[#315d4f]">第一站：Michi-no-Eki Bōyō Nakayama</p>
@@ -98,9 +104,11 @@ export default function Day3Page() {
 
       <section className="mt-16 rounded-[30px] bg-[#e7e8dd] p-6 sm:p-8"><MapPin size={22} className="text-[#be5f3a]" /><p className="mt-5 eyebrow">DAY 3 · ONE-GLANCE ROUTE</p><h2 className="mt-3 font-serif text-3xl">10:00 出发，约 21:00 回 Chalet。</h2><div className="mt-7 flex flex-wrap items-center gap-2 text-xs font-bold text-[#48635d]">{["Jozankei", "Nakayama Pass＋Age-imo", "Kimobetsu countryside", "Fukidashi Park", "Kyogoku 午餐", "Makkari", "Niseko 补给", "16:30 Chalet Check-in", "休息", "Chalet Night／Hirafu Evening"].map((stop, index, all) => <span key={stop} className="contents"><span className="rounded-full bg-white px-3 py-2 ring-1 ring-[#18352f]/8">{stop}</span>{index < all.length - 1 && <span className="text-[#be5f3a]">→</span>}</span>)}</div></section>
 
-      <section className="mt-16 rounded-[28px] border border-[#d3a873] bg-[#fff7e8] p-6"><div className="flex gap-4"><AlertTriangle className="shrink-0 text-[#b75a37]" size={22} /><div><h3 className="font-serif text-xl">这天最大的弹性</h3><p className="mt-2 text-sm leading-6 text-[#6f625b]">先看天气，再决定哪里多停。如果羊蹄山在中山峠已经完整出现，可多留 10–15 分钟；若全程被云盖，就把时间留给 Fukidashi Park、补给与提早入住。晚餐和 Hirafu 商店需在 10 月初重新确认 off-season 营业状态。</p></div></div></section>
+      <section className="mt-16 rounded-[28px] border border-[#d3a873] bg-[#fff7e8] p-6"><div className="flex gap-4"><AlertTriangle className="shrink-0 text-[#b75a37]" size={22} /><div><h3 className="font-serif text-xl">这天最大的弹性</h3><p className="mt-2 text-sm leading-6 text-[#6f625b]">先看天气，再决定哪里多停。如果羊蹄山在中山峠已经完整出现，可多留 10–15 分钟；若全程被云盖，就把时间留给 Fukidashi Park、补给与提早入住。晚餐和 Hirafu 商店需在 10 月初重新确认 off-season 营业状态。</p></div></div></section></div>
 
-      <div className="mt-14"><MapCard title="Jozankei → Niseko" subtitle="经 Nakayama Pass、Fukidashi Park、Makkari 与 Niseko Town 前往 Chalet。导航仅使用截图中的地点名称。" {...day3Route} /></div>
+      <div className="day-details-en"><section className="mt-16 grid gap-5 lg:grid-cols-2"><article className="rounded-[28px] bg-white p-7 ring-1 ring-[#18352f]/8"><p className="eyebrow">10:35 · STOP 01</p><h2 className="mt-3 font-serif text-3xl">Nakayama Pass</h2><p className="mt-4 text-sm leading-7 text-[#657a74]">Stop at Michi-no-Eki Bōyō Nakayama for the toilet, local products, a first Mt. Yotei view in clear weather and Age-imo. Allow 30–40 minutes. Free; no reservation.</p></article><article className="rounded-[28px] bg-[#e7e8dd] p-7"><p className="eyebrow">11:15 · SCENIC DRIVE</p><h2 className="mt-3 font-serif text-3xl">Kimobetsu countryside</h2><p className="mt-4 text-sm leading-7 text-[#657a74]">Let the valley, town, farms, farmhouses, Mt. Yotei and autumn forest unfold naturally. Stop for about ten minutes only where it is safe and legal; do not detour for an internet-famous photo point.</p></article></section><section className="mt-5 rounded-[30px] bg-[#18352f] p-7 text-white sm:p-9"><p className="text-xs font-bold tracking-[.18em] text-[#f6c85f]">12:10 · DAY 3 MUST GO</p><h2 className="mt-3 font-serif text-4xl">Fukidashi Park</h2><p className="mt-5 text-sm leading-7 text-white/75">Mt. Yotei spring water emerges among forest, wooden bridges, moss and autumn leaves. Bring an empty bottle if desired. Allow about 1 to 1¼ hours. Free; no reservation. Michi-no-Eki Meisui-no-Sato Kyogoku is nearby.</p></section><section className="mt-5 grid gap-5 lg:grid-cols-3"><article className="rounded-[28px] bg-[#f0d7c7] p-6"><p className="eyebrow">13:30 · LUNCH</p><h2 className="mt-3 font-serif text-2xl">Kyogoku or Makkari</h2><p className="mt-3 text-sm leading-7 text-[#657a74]">Choose soba, udon, a set meal, a small yoshoku shop or roadside-station food. Do not detour to Kutchan for a restaurant.</p></article><article className="rounded-[28px] bg-white p-6 ring-1 ring-[#18352f]/8"><p className="eyebrow">14:40 · MAKKARI</p><h2 className="mt-3 font-serif text-2xl">A rural stop below Mt. Yotei</h2><p className="mt-3 text-sm leading-7 text-[#657a74]">Michi-no-Eki Makkari Flower Center is an option. Allow 30–45 minutes; stay longer if Mt. Yotei is clear, or leave sooner if clouded over.</p></article><article className="rounded-[28px] bg-[#e9e5da] p-6"><p className="eyebrow">15:30 · SUPPLIES</p><h2 className="mt-3 font-serif text-2xl">Niseko Town</h2><p className="mt-3 text-sm leading-7 text-[#657a74]">Buy water, milk, eggs, breakfast, fruit, meat or prepared food, cheese, noodles, coffee, Sapporo Classic, highball, ice and tomorrow's car water for the two-night chalet stay.</p></article></section><section className="mt-5 grid gap-5 lg:grid-cols-2"><article className="rounded-[28px] bg-[#d97b52] p-7 text-white"><p className="text-xs font-bold tracking-[.18em] text-[#ffdc8a]">16:15–16:45 · CHECK-IN</p><h2 className="mt-3 font-serif text-3xl">Settle into the chalet.</h2><p className="mt-4 text-sm leading-7 text-white/80">Park, find the entrance, carry six people's luggage in and get familiar with the rooms and kitchen. Rest from 16:45–17:30. The hard limit is check-in before 18:00.</p></article><article className="rounded-[28px] bg-[#e2eadf] p-7"><p className="eyebrow">DAY 3 NIGHT</p><h2 className="mt-3 font-serif text-3xl">Chalet Night or Hirafu Evening</h2><p className="mt-4 text-sm leading-7 text-[#657a74]">If tired, cook or buy prepared food, have a Sapporo Classic and enjoy the chalet. If the group has energy, leave around 17:30–18:00 for dinner and a gentle Hirafu walk. This is off-season, so recheck restaurant and shop opening in early October.</p></article></section><section className="mt-5 rounded-[28px] bg-white p-7 ring-1 ring-[#18352f]/8"><p className="eyebrow">TICKETS, PLAN B & FLEXIBILITY</p><h2 className="mt-3 font-serif text-3xl">Nothing to pre-buy today.</h2><p className="mt-4 text-sm leading-7 text-[#657a74]">Nakayama Pass, Fukidashi Park, Kyogoku/Makkari, roadside stations and the Hirafu walk need no booking; the chalet is booked. Dinner remains unreserved until opening is rechecked. Kyogoku Onsen, Niseko View Plaza, Kutchan and Hangetsu Lake are Plan B only. Otaru and Yoichi remain excluded. Let weather decide where to stay longer.</p></section></div>
+
+      <div className="mt-14"><MapCard title="Jozankei → Niseko" subtitle="经 Nakayama Pass 中山峠、Fukidashi Park 吹出公园、Makkari 真狩与 Niseko Town 二世谷前往 Chalet。" subtitleEn="Drive to the chalet via Nakayama Pass, Fukidashi Park, Makkari and Niseko Town. Navigation uses only the source place names." {...day3Route} /></div>
     </div>
   </main>;
 }
