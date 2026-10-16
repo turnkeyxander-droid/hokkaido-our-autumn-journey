@@ -5,6 +5,7 @@ const days = Array.from({ length: 15 }, (_, index) => {
   const day = index + 1;
   if (day === 1) return { day, date: "20 OCT", title: "Airport → Jozankei", href: "/day-1" };
   if (day === 2) return { day, date: "21 OCT", title: "Jozankei Autumn", href: "/day-2" };
+  if (day === 3) return { day, date: "22 OCT", title: "Jozankei → Niseko", href: "/day-3" };
   return { day, date: "待补充", title: "行程内容稍后加入", href: null };
 });
 
@@ -16,7 +17,7 @@ export default function ItineraryPage() {
         <div className="relative mx-auto max-w-6xl">
           <p className="text-[10px] font-bold tracking-[0.25em] text-[#f6c85f]">DAY BY DAY</p>
           <h1 className="mt-4 font-serif text-5xl tracking-[-0.04em] sm:text-7xl">Itinerary</h1>
-          <p className="mt-5 max-w-xl text-sm leading-7 text-white/65">选择一天进入当天页面。现有截图只提供 Day 1–2 的完整攻略，其余日期先保留入口，不补写内容。</p>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-white/65">选择一天进入当天页面。Day 1–3 已按你提供的完整截图建立；其余日期先保留入口，不补写内容。</p>
         </div>
       </section>
 
