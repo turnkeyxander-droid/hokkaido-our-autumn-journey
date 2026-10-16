@@ -9,3 +9,4 @@ out/
 /lib/*
 !/lib/itinerary.ts
 !/lib/timetable.ts
+!/lib/book-check.ts
